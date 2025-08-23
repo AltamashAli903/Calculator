@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/tailwind/src/output.css">
+    <style>
+        #main-1
+        {
+            display: grid;
+            grid-template-rows: 62px 62px 62px 62px 62px ;
+            grid-template-columns: 77px 77px 77px 77px;
+            gap: 2px;
+        }
+        button{
+            background-color: aquamarine;
+            border-radius: 50%;
+            font-size: xx-large;
+             gap: 10px;      
+            }
+       body{
+    background-color: rgb(30, 41, 59) ;
+  }
+  .div-1{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .div-2{
+    height: 68%;
+    border-radius: 5%;
+    background-color: #319795;
+  }
+  .div-3{
+    padding-top: 10px;
+    padding-bottom: 25px;
+    padding-left: 5%;
+  }
+  input{
+    background-color:#319795 ;
+    font-size: xx-large;
+  }
+    </style>
+    </head>
+<body>
+    <div class="div-1">
+        <div class="div-2">
+            <div class="div-3">
+                <input type="text" id="ans" disabled class="pt-3">
+            </div>
+            <div id="main-1">
+                <button id="clear" onclick="AC()">AC</button>
+                <button id="per" onclick="num('**')">**</button>
+                <button id="del" onclick="del()">DEL</button>
+                <button id="divi" onclick="num('/')">/</button>
+                <button id="seven" onclick="num('7')">7</button>
+                <button id="eight" onclick="num('8')">8</button>
+                <button id="nine" onclick="num('9')">9</button>
+                <button id="mul" onclick="num('*')">*</button>
+                <button id="four" onclick="num('4')">4</button>
+                <button id="five" onclick="num('5')">5</button>
+                <button id="six" onclick="num('6')">6</button>
+                <button id="sub" onclick="num('-')">-</button>
+                <button id="one" onclick="num('1')">1</button>
+                <button id="two"  onclick="num('2')">2</button>
+                <button id="three" onclick="num('3')">3</button>
+                <button id="add"  onclick="num('+')">+</button>
+                <button id="zero2" onclick="num('00')">00</button>
+                <button id="zero"  onclick="num('0')">0</button>
+                <button id="dec" onclick="num('.')">.</button>
+                <button id="cal" onclick="calculate()">=</button>
+            </div>
+        </div>
+    </div>
+    <script>
+    let display = document.getElementById("ans");
+
+function num(value) {
+  display.value += value;
+}
+
+function del(display,value) {
+  display.value -= value;
+}
+
+function AC() {
+  display.value = "";
+}
+
+function calculate() {
+  try {
+    display.value = eval(display.value);
+  } catch (error) {
+    display.value = "";
+  }}
+    </script>
+</body>
+</html>
